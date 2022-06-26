@@ -1,0 +1,25 @@
+.mat-toolbar{
+  margin: -24px;
+  width: auto;
+  margin-bottom: 10px;
+  z-index: 3
+}
+.title-content{
+  flex: 1 1 auto;
+  text-align:center
+}
+ mat-form-field{
+   padding: 5px;
+ }
+
+ .mat-typography {
+  padding: 0px 60px;
+ }
+
+ .signup-form {
+   background-color: darksalmon;
+   position: absolute;
+   width: 36%;
+   margin-left: 32%;
+   margin-top:-36%;
+ }

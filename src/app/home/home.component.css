@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin-top: 0px;
+}
+
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+.button-signup-login {
+  align-items: center !important;
+  margin-left: 42%;
+  margin-top: 4%;
+}
+
+.button-signup {
+  margin-right: 6px !important;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("../../assets/img/font_logo.webp");
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.button-forgot-password {
+  align-items: center !important;
+  margin-left: 44%;
+  /* margin-top: 4%; */
+}
+
+

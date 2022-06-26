@@ -1,0 +1,33 @@
+<div class="wrapper login-main">
+  <div class="logo">
+      <img src="../../assets/img/logo.jpeg" class="logo-img" style="width:19%" alt="">
+  </div>
+  <div class="text-center mt-4 name">
+      Login Portal
+  </div>
+  <form class="p-3 mt-3 login-form" [formGroup]="loginForm">
+      <div class="form-field d-flex align-items-center">
+          <span class="far fa-user"></span>
+          <input type="email" matInput formControlName="email" placeholder="Username">
+          <mat-error *ngIf= "loginForm.controls.email.touched && loginForm.controls.email.invalid">
+            <span *ngIf=loginForm.controls.email.errors.required>This field is mandatory.</span>
+              <span *ngIf=loginForm.controls.email.errors.pattern>This field is invalid.</span>
+              </mat-error>
+      </div>
+      <div class="form-field d-flex align-items-center">
+          <span class="fas fa-key"></span>
+          <input type="password" matInput formControlName="password" class="mt-4" placeholder="Password">
+          <mat-error *ngIf= "loginForm.controls.password.touched && loginForm.controls.password.invalid">
+            <span *ngIf=loginForm.controls.password.errors.required>This field is mandatory.</span>
+              <span *ngIf=loginForm.controls.password.errors.pattern>This field is invalid.</span>
+              </mat-error>
+        </div>
+      </form>
+      <div>
+        <button mat-raised-button type="submit" class="btn btn-primary mt-3" (click)="handleSubmit()" [disabled]="!(loginForm.valid && loginForm.dirty)">Login</button>
+        <button mat-raised-button class="btn btn-primary mt-3" mat-dialog-close>Close</button>
+      </div>
+  <div class="text-center fs-6">
+      <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+  </div>
+</div>
