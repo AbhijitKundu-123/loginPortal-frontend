@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class UserService {
-  url = environment.apiUrl;
+  url:any = environment.apiUrl;
 
 
   constructor(private httpClient: HttpClient) { }
