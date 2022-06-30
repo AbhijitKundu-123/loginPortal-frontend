@@ -58,7 +58,7 @@
 <mat-dialog-actions class="justify-content-center">
   <button mat-raised-button type="submit" class="btn btn-primary" (click)="handleSubmit()"
   [disabled]="!(signupForm.valid && signupForm.dirty)">SignUp</button>
-  <button mat-raised-button class="btn btn-primary" mat-dialog-close>Close</button>
+  <button mat-raised-button class="btn btn-primary" (click)="backtoHome()">Close</button>
 </mat-dialog-actions>
 </div>
 

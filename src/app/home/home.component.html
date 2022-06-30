@@ -1,4 +1,4 @@
-<div class="bg-image">
+<!-- <div class="bg-image">
 <div class="has-bg-img">
   <h1 class="col-12" style="text-align: center">Login Portal</h1>
 </div>
@@ -8,4 +8,86 @@
 </div>
 <div class="button-forgot-password"><a class="btn btn-primary" (click)="forgotPasswordAction()">Forgot Password?</a></div>
 </div>
+ -->
 
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+
+    <div class="main bg-image">
+        <div class="navbar">
+            <div class="icon">
+              <img class="logo-img animate__animated animate__bounce" src="../../assets/img/logo.jpeg" alt="">
+                <!-- <h2 class="logo">Login Portal</h2> -->
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">DESIGN</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="/signup">SIGNUP</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+
+        </div>
+        <div class="content">
+            <h1>Login Portal & <br><span>Login</span></h1>
+            <!-- <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque
+                 expedita atque eveniet <br> quis nesciunt. Quos nulla vero consequuntur, fugit nemo ad delectus
+                <br> a quae totam ipsa illum minus laudantium?</p> -->
+
+                <button class="cn"><a href="#">JOIN US</a></button>
+                <div class="form">
+                <form class="login-form" [formGroup]="loginForm">
+                    <h2>Login Here</h2>
+                    <div class="form-field d-flex align-items-center">
+                    <input type="email" matInput formControlName="email" placeholder="Enter Email Here">
+                    <mat-error *ngIf= "loginForm.controls.email.touched && loginForm.controls.email.invalid">
+                      <span class="mandatory-msg" *ngIf=loginForm.controls.email.errors.required>This field is mandatory.</span>
+                      <span class="mandatory-msg" *ngIf=loginForm.controls.email.errors.pattern>This field is invalid.</span>
+                    </mat-error>
+                  </div>
+                  <div class="form-field d-flex align-items-center">
+                    <input type="password"  matInput formControlName="password" placeholder="Enter Password Here">
+                    <mat-error *ngIf= "loginForm.controls.password.touched && loginForm.controls.password.invalid">
+                      <span class="mandatory-msg" *ngIf=loginForm.controls.password.errors.required>This field is mandatory.</span>
+                      <span class="mandatory-msg" *ngIf=loginForm.controls.password.errors.pattern>This field is invalid.</span>
+                    </mat-error>
+                  </div>
+                    <button mat-raised-button class="btnn" (click)="handleSubmit()" [disabled]="!(loginForm.valid && loginForm.dirty)">Login</button>
+                </form>
+
+                    <p class="link">Don't have an account<br>
+                    <a href="#">Sign up here</a></p>
+                    <p class="liw">Log in with</p>
+
+                    <div class="icons">
+                        <!-- <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a> -->
+                    </div>
+
+                </div>
+                    </div>
+                </div>
+        <!-- </div> -->
+    <!-- </div> -->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>

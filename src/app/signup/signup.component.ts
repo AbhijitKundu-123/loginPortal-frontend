@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+// import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { SnackbarService } from '../services/snackbar.service';
@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
     private router:Router,
     private userService: UserService,
     private snackbarService: SnackbarService,
-    private dialogRef:MatDialogRef<SignupComponent>,
+    // private dialogRef:MatDialogRef<SignupComponent>,
     private ngxService:NgxUiLoaderService) { }
 
   ngOnInit(): void {
@@ -31,6 +31,10 @@ export class SignupComponent implements OnInit {
       contactNumber: [null,[Validators.required,Validators.pattern(GlobalConstants.contactNumberRegex)]],
       password: [null,[Validators.required]],
     })
+  }
+
+  backtoHome() {
+    this.router.navigate(['/']);
   }
 
   handleSubmit(){
@@ -44,7 +48,7 @@ export class SignupComponent implements OnInit {
     }
     this.userService.signup(data).subscribe((response:any)=>{
       this.ngxService.stop();
-      this.dialogRef.close();
+      // this.dialogRef.close();
       this.responseMessage = response?.message;
       this.snackbarService.openSnackBar(this.responseMessage,"");
       alert(this.responseMessage);

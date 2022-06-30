@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     private router:Router,
     private userService: UserService,
     private snackbarService: SnackbarService,
-    private dialogRef:MatDialogRef<LoginComponent>,
+    // private dialogRef:MatDialogRef<LoginComponent>,
     private ngxService:NgxUiLoaderService) { }
 
   ngOnInit(): void {
@@ -28,27 +28,27 @@ export class LoginComponent implements OnInit {
       password:[null,[Validators.required]]
     })
   }
-  handleSubmit() {
-    this.ngxService.start();
-    var formData = this.loginForm.value;
-    var data = {
-      email: formData.email,
-      password:formData.password
-    }
-    this.userService.login(data).subscribe((response:any)=>{
-      this.ngxService.stop();
-      this.dialogRef.close();
-      localStorage.setItem('token',JSON.stringify(response.value));
-      this.router.navigate(['/dashboard']);
-    },(error)=>{
-      this.ngxService.stop()
-      if(error.error?.message){
-        this.responseMessage = error.error?.message;
-      } else {
-        this.responseMessage = GlobalConstants.genericError;
-      }
-      this.snackbarService.openSnackBar(this.responseMessage,GlobalConstants.error);
-    })
-  }
+  // handleSubmit() {
+  //   this.ngxService.start();
+  //   var formData = this.loginForm.value;
+  //   var data = {
+  //     email: formData.email,
+  //     password:formData.password
+  //   }
+  //   this.userService.login(data).subscribe((response:any)=>{
+  //     this.ngxService.stop();
+  //     // this.dialogRef.close();
+  //     localStorage.setItem('token',JSON.stringify(response.value));
+  //     this.router.navigate(['/dashboard']);
+  //   },(error)=>{
+  //     this.ngxService.stop()
+  //     if(error.error?.message){
+  //       this.responseMessage = error.error?.message;
+  //     } else {
+  //       this.responseMessage = GlobalConstants.genericError;
+  //     }
+  //     this.snackbarService.openSnackBar(this.responseMessage,GlobalConstants.error);
+  //   })
+  // }
 
 }
